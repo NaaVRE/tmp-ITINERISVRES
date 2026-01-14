@@ -110,7 +110,7 @@ jobs:
         context: ${{ github.event.inputs.build_dir }}
         file: ${{ github.event.inputs.build_dir }}/${{ github.event.inputs.dockerfile }}
         tags: ${{steps.set-docker-tag.outputs.docker_tag}},${{ github.event.inputs.image_repo }}/${{ github.event.inputs.image_tag }}:latest
-        cache-from: type=gha
-        cache-to: type=gha,mode=min
+        # cache-from: type=gha
+        # cache-to: type=gha,mode=min
         push: true
         registry: ${{ vars.REGISTRY_NAME || 'ghcr.io' }}
